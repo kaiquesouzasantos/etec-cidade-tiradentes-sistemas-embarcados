@@ -3,7 +3,6 @@ void setup() {
      pinMode(1, OUTPUT); // LED -> AMARELO
      pinMode(2, OUTPUT); // LED -> VERMELHO
      pinMode(A0, INPUT); // POTENCIOMETRO
-
 }
 
 void loop() {
