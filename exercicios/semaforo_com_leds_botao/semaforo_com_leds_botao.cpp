@@ -1,17 +1,19 @@
-void setup() {
-    pinMode(1, INPUT); // BOTAO
-    pinMode(2, OUTPUT); // LED -> VERDE
-    pinMode(8, OUTPUT); // LED -> VERMELHO PEDESTRE
-    pinMode(4, OUTPUT); // LED -> AMARELO
-    pinMode(7, OUTPUT); // LED -> VERMELHO
-    pinMode(12, OUTPUT); // VERDE -> PEDESTRE
+int botao = 1, verde = 2, amarelo = 4, vermelho = 7, verdePedestre = 12, vermelhoPedestre = 8;
 
-    digitalWrite(2, HIGH);
-    digitalWrite(8, HIGH);
+void setup() {
+    pinMode(botao, INPUT); // BOTAO
+    pinMode(verde, OUTPUT); // LED -> VERDE
+    pinMode(vermelhoPedestre, OUTPUT); // LED -> VERMELHO PEDESTRE
+    pinMode(amarelo, OUTPUT); // LED -> AMARELO
+    pinMode(vermelho, OUTPUT); // LED -> VERMELHO
+    pinMode(verdePedestre, OUTPUT); // VERDE -> PEDESTRE
+
+    digitalWrite(verde, HIGH);
+    digitalWrite(vermelhoPedestre, HIGH);
 }
 
 void loop() {
-    if(digitalRead(1) == 1){
+    if(digitalRead(botao) == 1){
         delay(1000);
         
         verdeParaVermelhoCarro();
@@ -23,36 +25,36 @@ void loop() {
 }
 
 void verdeParaVermelhoCarro() {
-    digitalWrite(2, LOW);
-    digitalWrite(8, LOW);
-    digitalWrite(4, HIGH);
+    digitalWrite(verde, LOW);
+    digitalWrite(vermelhoPedestre, LOW);
+    digitalWrite(amarelo, HIGH);
 
     for (int counter = 0; counter < 50; ++counter) {
-        digitalWrite(8, HIGH);
+        digitalWrite(vermelhoPedestre, HIGH);
         delay(100); 
-        digitalWrite(8, LOW);
+        digitalWrite(vermelhoPedestre, LOW);
         delay(100);
     }
 
-    digitalWrite(4, LOW);
-    digitalWrite(7, HIGH);
-    digitalWrite(12, HIGH);
+    digitalWrite(amarelo, LOW);
+    digitalWrite(vermelho, HIGH);
+    digitalWrite(verdePedestre, HIGH);
 }
 
 void vermelhoParaVerdeCarro() {
-    digitalWrite(7, LOW);
-    digitalWrite(12, LOW);
-    digitalWrite(4, HIGH);
+    digitalWrite(vermelho, LOW);
+    digitalWrite(verdePedestre, LOW);
+    digitalWrite(amarelo, HIGH);
 
     for (int counter = 0; counter < 50; ++counter) {
-        digitalWrite(12, HIGH);
+        digitalWrite(verdePedestre, HIGH);
         delay(100); 
-        digitalWrite(12, LOW);
+        digitalWrite(verdePedestre, LOW);
         delay(100);
     }
 
-    digitalWrite(4, LOW);
-    digitalWrite(2, HIGH);
-    digitalWrite(8, HIGH);
+    digitalWrite(amarelo, LOW);
+    digitalWrite(verde, HIGH);
+    digitalWrite(vermelhoPedestre, HIGH);
 }
 

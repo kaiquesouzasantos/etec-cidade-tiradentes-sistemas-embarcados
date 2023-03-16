@@ -1,15 +1,17 @@
+int botaoAcende = 2, botaoApaga = 3, lampada = 4;
+
 void setup() {
-    pinMode(2, INPUT); // BOTAO -> ACENDE
-    pinMode(4, OUTPUT); // LAMPADA
-    pinMode(3, INPUT); // BOTAO -> APAGA
+    pinMode(botaoAcende, INPUT); // BOTAO -> ACENDE
+    pinMode(lampada, OUTPUT); // LAMPADA
+    pinMode(botaoApaga, INPUT); // BOTAO -> APAGA
 }
 
 void loop() {
-    if (digitalRead(2) == 1) {
-        digitalWrite(4, HIGH);
+    if (digitalRead(botaoAcende) == 1) {
+        digitalWrite(lampada, HIGH);
     }
-    if (digitalRead(3) == 1) {
-        digitalWrite(4, LOW);
+    if (digitalRead(botaoApaga) == 1) {
+        digitalWrite(lampada, LOW);
     }
     delay(10);
 }

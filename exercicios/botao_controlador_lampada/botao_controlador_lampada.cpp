@@ -1,18 +1,18 @@
-int LAMPADA = 0;
+int CONT_LAMPADA = 0, botao = 2, lampada = 4;
 
 void setup() {
-    pinMode(2, INPUT); // BOTAO
-    pinMode(4, OUTPUT); // LAMPADA
+    pinMode(botao, INPUT); // BOTAO
+    pinMode(lampada, OUTPUT); // LAMPADA
 }
 
 void loop() {  
-    if (digitalRead(2) == 1) {
-        if (LAMPADA == 0){
-    	    digitalWrite(4, HIGH);
-      	    LAMPADA = 1;
-        } else if (LAMPADA == 1) {
-      	    digitalWrite(4, LOW);
-      	    LAMPADA = 0;
+    if (digitalRead(botao) == 1) {
+        if (CONT_LAMPADA == 0){
+    	    digitalWrite(lampada, HIGH);
+      	    CONT_LAMPADA = 1;
+        } else if (CONT_LAMPADA == 1) {
+      	    digitalWrite(lampada, LOW);
+      	    CONT_LAMPADA = 0;
         }
     }
 }
