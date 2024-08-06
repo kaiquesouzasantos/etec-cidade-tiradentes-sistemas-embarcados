@@ -1,4 +1,4 @@
-<h1 align=center>ETEC199-2023-SE</h1>
+<h1 align=center>🌇 ETEC CIDADE TIRADENTES - SISTEMAS EMBARCADOS</h1>
 
 <p align="center">
   <img src="etec.png" width="500">
@@ -33,5 +33,5 @@
 ### 🔗 CONTRIBUIÇÃO
 
 ```
-$ git clone https://github.com/kaiquesouzasantos/etec199-2023-se.git 
+$ git clone https://github.com/kaiquesouzasantos/etec-cidade-tiradentes-sistemas-embarcados.git 
 ```
